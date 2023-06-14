@@ -38,7 +38,7 @@ public class StudentsImplement implements IStudentsService{
 
 	@Override
 	public void delete(Long id)  throws Exception{
-		repository.deleteById(id);;
+		repository.deleteById(id);
 	}
 
 	@Override
@@ -50,6 +50,19 @@ public class StudentsImplement implements IStudentsService{
 	public Students Edith(Students u) throws Exception{
 		return repository.save(u);
 	}
+
+	@Override
+	public Students existEmail(String email) throws Exception {
+		return repository.findByEmail(email);
+	}
+
+	@Override
+	public boolean findByIdStudents(Long u) throws Exception {
+		// TODO Auto-generated method stub
+		return repository.existsById(u);
+	}
+
+
 	
 	
 

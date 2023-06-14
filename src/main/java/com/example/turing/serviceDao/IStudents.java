@@ -8,4 +8,6 @@ import com.example.turing.entity.Students;
 @Repository
 public interface IStudents extends CrudRepository<Students, Long> {
 	boolean existsByEmail(String nombreTorre)  throws Exception;
+	Students findByEmail(String email)  throws Exception;
+	boolean existsById(Long id);
 }
